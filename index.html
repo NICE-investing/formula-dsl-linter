@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>NICE Investing Formula DSL Linter</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>NICE Investing Formula DSL Linter</h1>
+        <p>Validate your DSL formulas in real-time</p>
+      </div>
+
+      <div class="content">
+        <div class="formula-section">
+          <h2>Enter Formula</h2>
+          <form class="formula-form">
+            <div class="input-group">
+              <label for="formula">DSL Formula:</label>
+              <input
+                type="text"
+                id="formula"
+                class="formula-input"
+                placeholder="@100000 + 110000"
+              />
+            </div>
+            <button type="submit" class="lint-button">🔍 Lint Formula</button>
+          </form>
+        </div>
+
+        <div class="result-section">
+          <h2>Result</h2>
+          <div id="result-content" class="result-content">
+            Enter a formula and click "Lint Formula" to validate
+          </div>
+        </div>
+
+        <div class="examples">
+          <h3>Example Formulas</h3>
+          <div class="example-item">@100000 + 110000</div>
+          <div class="example-item">if(@100000 > 1000, @100000, 0)</div>
+          <div class="example-item">@100000[-1y] * 1.15</div>
+          <div class="example-item">(@100000 + @200000) / 103000</div>
+          <div class="example-item">if(is_annual, @200000[-1y], @200000[-1q])</div>
+          <div class="example-item">stk(close)[-1d] * 1000</div>
+          <div class="example-item invalid">@100000 +</div>
+          <div class="example-item invalid">if(@100000 > 1000, @100000)</div>
+          <div class="example-item invalid">@100000 + ) - 200000</div>
+          <div class="example-item invalid">stk(close,price)</div>
+        </div>
+
+        <div class="debug-section">
+          <h2>Debug Info</h2>
+          <div id="debug-content" class="debug-content"></div>
+        </div>
+      </div>
+    </div>
+    <!-- INSERT_YOUR_CODE -->
+    <footer
+      style="
+        text-align: center;
+        margin: 2rem 0;
+        color: #202020;
+        font-size: 0.95em;
+      "
+    >
+      © 2025 NICE Investing. All rights reserved.
+    </footer>
+
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
